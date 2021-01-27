@@ -1,7 +1,7 @@
-<idea-plugin version="2">
+<idea-plugin>
     <id>com.widerwille.quicklook</id>
     <name>QuickLook</name>
-    <version>0.9.3</version>
+    <version>0.9.4</version>
     <vendor email="justsid@widerwille.com" url="http://widerwille.com">Sidney Just</vendor>
 
     <description><![CDATA[
@@ -16,8 +16,6 @@
         <li>UIView, NSView</li>
         <li>CALayer (iOS only)</li>
         <li>UIBezierPath</li>
-        <li>NSURL</li>
-        <li>CLLocation</li>
         <li>Custom classes that implement <code>debugQuickLookObject</code> and which return one of the above objects</li>
       </ul>
 
@@ -26,6 +24,9 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    <ul><h3><b>0.9.4</b></h3>
+      <li>Fixed support for AppCode 2020.3</li>
+    </ul>
     <ul><h3><b>0.9.3</b></h3>
       <li>Fixed support for AppCode 2020.1</li>
       <li>Removed support for CLLocation, NSURL</li>
@@ -55,10 +56,12 @@
 
     <idea-version since-build="193.1784"/>
     <depends>com.intellij.modules.appcode</depends>
+    <depends>com.intellij.modules.cidr.debugger</depends>
     <depends>com.intellij.platform.images</depends>
 
     <extensionPoints>
-        <extensionPoint qualifiedName="com.widerwille.quicklook.quickLookValueRendererFactory" interface="com.widerwille.quicklook.QuickLookValueRendererFactory" />
+        <extensionPoint interface="com.widerwille.quicklook.QuickLookValueRendererFactory"
+                        name="quickLookValueRendererFactory"/>
     </extensionPoints>
     
 

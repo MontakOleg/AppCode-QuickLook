@@ -6,7 +6,7 @@ import com.intellij.xdebugger.frame.XFullValueEvaluator;
 import com.jetbrains.cidr.execution.debugger.CidrDebugProcess;
 import com.jetbrains.cidr.execution.debugger.CidrStackFrame;
 import com.jetbrains.cidr.execution.debugger.backend.DebuggerCommandException;
-import com.jetbrains.cidr.execution.debugger.evaluation.EvaluationContext;
+import com.jetbrains.cidr.execution.debugger.backend.EvaluationContext;
 import com.jetbrains.cidr.execution.debugger.evaluation.renderers.ValueRenderer;
 import org.intellij.images.editor.impl.ImageEditorManagerImpl;
 import org.jetbrains.annotations.NotNull;
@@ -115,7 +115,7 @@ public class QuickLookValueRenderer extends ValueRenderer
 		{
 			try
 			{
-				Field field = EvaluationContext.class.getDeclaredField("myFrame");
+				Field field = EvaluationContext.class.getDeclaredField("myCacheHolder");
 				field.setAccessible(true);
 				CidrStackFrame frame = (CidrStackFrame)field.get(context);
 

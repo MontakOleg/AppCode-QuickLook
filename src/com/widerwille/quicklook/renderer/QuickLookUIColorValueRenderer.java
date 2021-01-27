@@ -1,6 +1,7 @@
 package com.widerwille.quicklook.renderer;
 
 import com.jetbrains.cidr.execution.debugger.backend.DebuggerCommandException;
+import com.jetbrains.cidr.execution.debugger.backend.EvaluationContext;
 import com.widerwille.quicklook.QuickLookValue;
 import com.widerwille.quicklook.QuickLookValueRenderer;
 import com.widerwille.quicklook.QuickLookEvaluationContext;
@@ -9,7 +10,6 @@ import com.widerwille.quicklook.helper.QuickLookColorIcon;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.util.Key;
 import com.jetbrains.cidr.execution.debugger.evaluation.CidrPhysicalValue;
-import com.jetbrains.cidr.execution.debugger.evaluation.EvaluationContext;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
